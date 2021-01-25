@@ -1,0 +1,19 @@
+export const SET_DATA_VALUE = "mobile/QUIZ/SET_DATA_VALUE";
+
+export const POST_QUIZ_REQUEST = "mobile/QUIZ/POST_QUIZ_REQUEST";
+
+export const POST_QUIZ_SUCCESS = "mobile/QUIZ/POST_QUIZ_SUCCESS";
+
+export const POST_QUIZ_FAILURE = "mobile/QUIZ/POST_QUIZ_FAILURE";
+
+export const GET_QUIZ_REQUEST = "mobile/QUIZ/GET_QUIZ_REQUEST";
+
+export const GET_QUIZ_SUCCESS = "mobile/QUIZ/GET_QUIZ_SUCCESS";
+
+export const GET_QUIZ_FAILURE = "mobile/QUIZ/GET_QUIZ_FAILURE";
+
+export const ANSWER_QUIZ_REQUEST = "mobile/QUIZ/ANSWER_QUIZ_REQUEST";
+
+export const ANSWER_QUIZ_SUCCESS = "mobile/QUIZ/ANSWER_QUIZ_SUCCESS";
+
+export const ANSWER_QUIZ_FAILURE = "mobile/QUIZ/ANSWER_QUIZ_FAILURE";
