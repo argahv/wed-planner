@@ -1,32 +1,28 @@
-import { guestList } from "../../../api";
+import { selectData } from "./selectors";
 import * as types from "./types";
+import { updateAttend } from "../../api";
 import Toast from "react-native-tiny-toast";
 
-export const setDataValue = (payload) => ({
-  type: types.SET_DATA_VALUE,
+export const attendUpdateRequest = (payload) => ({
+  type: types.ATTEND_UPDATE_REQUEST,
+  payload,
+});
+export const attendUpdateSuccess = (payload) => ({
+  type: types.ATTEND_UPDATE_SUCCESS,
   payload,
 });
 
-export const listGuestRequest = (payload) => ({
-  type: types.LIST_GUEST_REQUEST,
+export const attendUpdateFailure = (payload) => ({
+  type: types.ATTEND_UPDATE_FAILURE,
   payload,
 });
 
-export const listGuestSuccess = (payload) => ({
-  type: types.LIST_GUEST_SUCCESS,
-  payload,
-});
-export const listGuestFailure = (payload) => ({
-  type: types.LIST_GUEST_FAILURE,
-  payload,
-});
-
-export const listGuest = () => async (dispatch, getState) => {
-  dispatch(listGuestRequest());
+export const attendUpdate = (data) => async (dispatch, getState) => {
+  dispatch(attendUpdateRequest(data));
   try {
-    const response = await guestList();
-    dispatch(listGuestSuccess(response.data));
-    const toast = Toast.show(response.data.user.length);
+    const response = await updateAttend(data);
+    dispatch(attendUpdateSuccess(response.data));
+    const toast = Toast.showSuccess(response.data.message);
     await new Promise((resolve) => {
       setTimeout(() => {
         resolve();
@@ -38,10 +34,10 @@ export const listGuest = () => async (dispatch, getState) => {
     let errorMessage = "";
     if (error.response) {
       errorMessage = error.response.data.message;
-      dispatch(listGuestFailure(error.response.data));
+      dispatch(attendUpdateFailure(error.response.data));
     } else {
       errorMessage = error.message;
-      dispatch(listGuestFailure(error.message));
+      dispatch(attendUpdateFailure(error.message));
     }
     const toast = Toast.show(errorMessage, {
       position: 0,

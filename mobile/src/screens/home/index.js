@@ -1,1 +1,1 @@
-export { default as HomeTabs } from "./home-tabs.component";
+export { default as HomeTabs } from "./home.component";

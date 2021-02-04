@@ -36,7 +36,7 @@ const RenderSchedule = ({ data, getSchedule, dataS, ...props }) => {
           borderColor: "blue",
         }}
       >
-        {moment(item.time).format("MMM DD")} -
+        {item.event_title && `${moment(item.time).format("MMM DD")} - `}
         <Text
           style={{
             color: "purple",
@@ -87,6 +87,7 @@ const RenderSchedule = ({ data, getSchedule, dataS, ...props }) => {
 
   return (
     <List
+      scrollEnabled
       refreshControl={
         <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
       }

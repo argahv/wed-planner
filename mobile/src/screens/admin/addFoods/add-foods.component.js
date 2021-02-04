@@ -12,6 +12,7 @@ import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 import * as mapDispatchToProps from "./actions";
 import { selectLoading } from "./selectors";
+import TopBar from "../../../components/topbar.component";
 
 const selectorValues = [
   {
@@ -87,7 +88,7 @@ const AddFoods = ({ createFoods, loading }) => {
           onSelect={(selectIndex) => handleSelect(key, selectIndex, index)}
         >
           {values.map(({ value, label }) => (
-            <SelectItem title={label} />
+            <SelectItem key={label} title={label} />
           ))}
         </Select>
       );
@@ -95,7 +96,7 @@ const AddFoods = ({ createFoods, loading }) => {
   };
   return (
     <View style={{ padding: 10 }}>
-      <Text category="h4">Add Foods List</Text>
+      <TopBar back>Add Food Items</TopBar>
 
       <View>
         <Input

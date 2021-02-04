@@ -3,13 +3,11 @@ import Qs from "query-string";
 
 // export const BASE_URL = "http://192.168.1.129:8080";
 
-// export const BASE_URL =
-//   process.env === "development"
-//     ? "http://192.168.1.92:8080"
-//     : "https://wed-planner-backend.herokuapp.com/";
-// export const BASE_URL = "http://192.168.1.92:8080"
-console.log("process.env", process.env);
-export const BASE_URL = "http://192.168.1.181:8080";
+export const BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? "http://192.168.1.92:8080"
+    : "https://wed-planner-backend.herokuapp.com/";
+
 export const api = axios.create({
   baseURL: BASE_URL,
   timeout: 10000,
@@ -54,3 +52,7 @@ export const foodsCreate = (data) => api.post(`/api/foodsCreate`, { data });
 export const answerQuiz = (data) => api.post(`/api/answerQuiz`, { data });
 export const createQuiz = (data) => api.post("/api/createQuiz", { data });
 export const quizGet = () => api.get(`/api/quizGet`);
+
+// Scanner
+export const updateAttend = (data) =>
+  api.post(`/api/attendedWedding`, { data });

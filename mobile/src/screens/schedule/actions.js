@@ -19,6 +19,7 @@ export const getSchedule = () => async (dispatch) => {
   dispatch(getScheduleRequest());
   try {
     const response = await scheduleGet();
+    console.log("response.data", response.data);
     dispatch(getScheduleSuccess(response.data.data));
     return response.data;
   } catch (error) {

@@ -1,12 +1,13 @@
 import { Button } from "@ui-kitten/components";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import TopBar from "../../components/topbar.component";
 import { AppRoute } from "../../navigation/app-routes";
 
 const AdminComponent = ({ navigation }) => {
   return (
     <View>
-      <Text>Inviter Panel</Text>
+      <TopBar back>Inviter Panel</TopBar>
       <Button onPress={() => navigation.navigate(AppRoute.GUEST_CREATE)}>
         Create Guest
       </Button>

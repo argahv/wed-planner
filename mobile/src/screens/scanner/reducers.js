@@ -6,17 +6,19 @@ export const INITIAL_STATE = {
   data: {},
 };
 
-const reducer = (state = INITIAL_STATE, { type, payload }) =>
+const reducer = (state = INITIAL_STATE, action) =>
   produce(state, (draft) => {
-    switch (type) {
-      case types.LIST_GUEST_REQUEST:
+    switch (action.type) {
+      case types.SET_DATA_VALUE:
+        draft.data[action.payload.key] = action.payload.value;
+        break;
+      case types.ATTEND_UPDATE__REQUEST:
         draft.loading = true;
         break;
-      case types.LIST_GUEST_SUCCESS:
+      case types.ATTEND_UPDATE__SUCCESS:
         draft.loading = false;
-        draft.data = payload;
         break;
-      case types.LIST_GUEST_FAILURE:
+      case types.ATTEND_UPDATE__FAILURE:
         draft.loading = false;
         break;
     }

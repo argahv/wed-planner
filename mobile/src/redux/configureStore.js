@@ -38,6 +38,7 @@ const persistConfig = {
     "admin_quiz_create",
     "admin_schedule_create",
     "admin_foods_create",
+    "attend_scanner",
   ],
 };
 

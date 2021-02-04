@@ -6,6 +6,7 @@ import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 import * as mapDispatchToProps from "./actions";
 import { selectLoading } from "./selectors";
+import TopBar from "../../../components/topbar.component";
 
 const GuestCreate = ({ createGuest, loading }) => {
   const [data, setData] = useState({
@@ -26,8 +27,7 @@ const GuestCreate = ({ createGuest, loading }) => {
 
   return (
     <View>
-      <Text category="h4">Create guest</Text>
-
+      <TopBar back>Add Guest</TopBar>
       <View>
         <Input
           onChangeText={(value) =>

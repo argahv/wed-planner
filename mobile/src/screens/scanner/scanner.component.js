@@ -12,6 +12,7 @@ import { BarCodeScanner, BarCodeScannerResult } from "expo-barcode-scanner";
 import BarcodeMask from "react-native-barcode-mask";
 import { connect } from "react-redux";
 import { selectUser } from "../../redux/global/selectors";
+import * as mapDispatchToProps from "./actions";
 
 const finderWidth = 280;
 const finderHeight = 230;
@@ -20,7 +21,7 @@ const height = Dimensions.get("window").height;
 const viewMinX = (width - finderWidth) / 2;
 const viewMinY = (height - finderHeight) / 2;
 
-const BarCodeScanScreen = ({ user }) => {
+const BarCodeScanScreen = ({ user, attendUpdate }) => {
   const [hasPermission, setHasPermission] = useState(null);
   const [type, setType] = useState(BarCodeScanner.Constants.Type.back);
   const [scanned, setScanned] = useState(false);
@@ -30,9 +31,10 @@ const BarCodeScanScreen = ({ user }) => {
       setHasPermission(status === "granted");
     })();
   }, []);
-  const handleBarCodeScanned = (scanningResult) => {
+  const handleBarCodeScanned = async (scanningResult) => {
     if (!scanned) {
       const { type, data, bounds: { origin } = {} } = scanningResult;
+
       // @ts-ignore
       const { x, y } = origin;
       if (
@@ -41,16 +43,8 @@ const BarCodeScanScreen = ({ user }) => {
         x <= viewMinX + finderWidth / 2 &&
         y <= viewMinY + finderHeight / 2
       ) {
+        await attendUpdate(data);
         setScanned(true);
-        Alert.alert(
-          "Table No.",
-          `Dear ${user.name}, Your Table number is ${data}`,
-          [
-            // { text: "Okay", style: "cancel", onPress: () => setScanned(false) },
-            { text: "Scan Again", onPress: () => setScanned(false) },
-          ]
-        );
-        // alert(`Dear ${user.name}, Your Table number is ${data}`);
       }
     }
   };
@@ -112,7 +106,7 @@ const mapStateToProps = createStructuredSelector({
   user: selectUser,
 });
 
-export default connect(mapStateToProps)(BarCodeScanScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(BarCodeScanScreen);
 
 const styles = StyleSheet.create({
   container: {

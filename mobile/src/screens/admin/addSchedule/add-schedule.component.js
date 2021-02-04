@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import * as mapDispatchToProps from "./actions";
 import { selectLoading } from "./selectors";
 import moment from "moment";
+import TopBar from "../../../components/topbar.component";
 
 const AddSchedule = ({ scheduleCreate, loading }) => {
   const [data, setData] = useState({
@@ -57,7 +58,7 @@ const AddSchedule = ({ scheduleCreate, loading }) => {
 
   return (
     <View style={{ padding: 10 }}>
-      <Text category="h4">Add Time Schedule of the Wedding</Text>
+      <TopBar back>Add Schedule</TopBar>
       <Input
         multiline
         onChangeText={(value) =>

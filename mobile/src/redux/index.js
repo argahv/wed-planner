@@ -9,6 +9,7 @@ import listGuest from "./admin/guestListReducer";
 import addQuiz from "./admin/addQuizReducer";
 import addSchedule from "./admin/addScheduleReducer";
 import addFoods from "./admin/addFoodsReducer";
+import attendScanner from "./scanner/reducer";
 
 const rootReducer = combineReducers({
   global,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   addQuiz,
   addSchedule,
   addFoods,
+  attendScanner,
 });
 
 export default rootReducer;

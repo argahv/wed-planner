@@ -10,7 +10,7 @@ const TopBar = ({ children, title = "", back = false }) => {
 
   const renderBackIcon = () => (
     <Button
-      appearance="outline"
+      appearance="ghost"
       // status="danger"
       accessoryLeft={BackIcon}
       onPress={() => navigation.goBack()}
@@ -18,26 +18,16 @@ const TopBar = ({ children, title = "", back = false }) => {
   );
 
   return (
-    <View>
+    <View style={{ backgroundColor: "white", padding: 10 }}>
       <View style={{ display: "flex", flexDirection: "row", marginTop: 10 }}>
         {back && <View style={{ flex: 1 }}>{renderBackIcon()}</View>}
         <View style={{ flex: 8 }}>
-          <Text category="h4" style={{ textAlign: "center" }}>
-            Welcome,{" "}
-            <Text category="h1" style={{ fontSize: 30, fontWeight: "bold" }}>
-              {title}
-            </Text>
+          <Text category="h5" style={{ textAlign: "center", fontSize: 30 }}>
+            {children}
           </Text>
         </View>
       </View>
-      <View>
-        <Text
-          category="h5"
-          style={{ textAlign: "center", fontSize: 30, color: "grey" }}
-        >
-          {children}
-        </Text>
-      </View>
+      <View></View>
     </View>
   );
 };

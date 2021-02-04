@@ -6,8 +6,8 @@ export const INITIAL_STATE = {
   data: [
     {
       time: "",
-      title: "Not found",
-      description: "Not found",
+      title: "",
+      description: "",
     },
   ],
 };

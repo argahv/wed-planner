@@ -6,6 +6,7 @@ import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 import * as mapDispatchToProps from "./actions";
 import { selectLoading } from "./selectors";
+import TopBar from "../../../components/topbar.component";
 
 const AddQuiz = ({ quizCreate, loading }) => {
   const [data, setData] = useState({
@@ -28,7 +29,7 @@ const AddQuiz = ({ quizCreate, loading }) => {
 
   return (
     <View>
-      <Text category="h4">Add Questions to the Quiz</Text>
+      <TopBar back>Add Quiz Questions</TopBar>
 
       <View>
         <Input

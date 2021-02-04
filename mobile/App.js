@@ -6,6 +6,7 @@ import PushNotification from "react-native-push-notification";
 import PushNotificationIOS from "@react-native-community/push-notification-ios";
 import { enableScreens } from "react-native-screens";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import AnimatedSplash from "react-native-animated-splash-screen";
 import * as eva from "@eva-design/eva";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
@@ -15,8 +16,10 @@ import configureStore from "./src/redux/configureStore";
 import baseTheme from "./src/theme.js";
 import {
   useFonts,
-  Inter_900Black, AllertaStencil_400Regular, Amarante_400Regular
-} from '@expo-google-fonts/dev';
+  Inter_900Black,
+  AllertaStencil_400Regular,
+  Amarante_400Regular,
+} from "@expo-google-fonts/dev";
 
 enableScreens();
 
@@ -25,7 +28,9 @@ const App = () => {
   const [theme, setTheme] = useState(baseTheme);
 
   let [fontsLoaded] = useFonts({
-    Inter_900Black, AllertaStencil_400Regular, Amarante_400Regular
+    Inter_900Black,
+    AllertaStencil_400Regular,
+    Amarante_400Regular,
   });
 
   // Notifications;
@@ -104,7 +109,7 @@ const App = () => {
     <Provider store={store}>
       <StatusBar
         barStyle="dark-content"
-        backgroundColor={theme["color-primary-100"]}
+        backgroundColor={theme["color-primary-transparent-100"]}
       />
       <IconRegistry icons={EvaIconsPack} />
 
