@@ -7,7 +7,8 @@ import Qs from "query-string";
 //   process.env === "development"
 //     ? "http://192.168.1.92:8080"
 //     : "https://wed-planner-backend.herokuapp.com/";
-// export const BASE_URL = "http://192.168.1.92:8080";
+// export const BASE_URL = "http://192.168.1.92:8080"
+console.log("process.env", process.env);
 export const BASE_URL = "http://192.168.1.181:8080";
 export const api = axios.create({
   baseURL: BASE_URL,
