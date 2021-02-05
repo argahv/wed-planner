@@ -18,7 +18,7 @@ import {
   useFonts,
   Inter_900Black,
   AllertaStencil_400Regular,
-  Amarante_400Regular,
+  Amaranth_700Bold,
 } from "@expo-google-fonts/dev";
 
 enableScreens();
@@ -30,7 +30,7 @@ const App = () => {
   let [fontsLoaded] = useFonts({
     Inter_900Black,
     AllertaStencil_400Regular,
-    Amarante_400Regular,
+    Amaranth_700Bold,
   });
 
   // Notifications;
@@ -102,7 +102,7 @@ const App = () => {
       });
   }, [getInitialState]);
 
-  if (!isReady) {
+  if (!isReady & !fontsLoaded) {
     return <></>;
   }
   return (

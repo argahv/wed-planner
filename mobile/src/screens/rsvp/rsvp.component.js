@@ -44,7 +44,11 @@ const RSVP = ({ user, rsvpUpdate, loading, getRSVP }) => {
             })}
           </View>
           <View style={{}}>
-            <Button disabled={loading} onPress={handleRSVPButton}>
+            <Button
+              disabled={loading}
+              style={{ backgroundColor: "#6B66A8" }}
+              onPress={handleRSVPButton}
+            >
               Respond
             </Button>
           </View>

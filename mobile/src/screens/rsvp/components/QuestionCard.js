@@ -54,7 +54,15 @@ const QuestionCard = ({
                 key={`${label}-radio-button`}
               >
                 {(evaProps) => (
-                  <Text {...evaProps} style={{ fontSize: 16, marginLeft: 2 }}>
+                  <Text
+                    {...evaProps}
+                    style={{
+                      fontSize: 17,
+                      marginLeft: 2,
+                      color: "#7E55A0",
+                      fontWeight: "bold",
+                    }}
+                  >
                     {label}
                   </Text>
                 )}
@@ -72,7 +80,12 @@ const QuestionCard = ({
             key={`${option.label}-numeric`}
           >
             <View style={{ flex: 4 }}>
-              <Text category="h6">{option.label}</Text>
+              <Text
+                style={{ color: "#7E55A0", fontWeight: "bold" }}
+                category="h6"
+              >
+                {option.label}
+              </Text>
             </View>
             <View style={{ flex: 1.5 }}>
               <NumericInput
@@ -86,8 +99,8 @@ const QuestionCard = ({
                 onChange={(value) => setDataValue({ key: option.key, value })}
                 textColor="#B0228C"
                 iconStyle={{ color: "white" }}
-                rightButtonBackgroundColor="darkblue"
-                leftButtonBackgroundColor="blue"
+                rightButtonBackgroundColor="#7E55A0"
+                leftButtonBackgroundColor="#6B66A8"
               />
             </View>
           </View>
@@ -98,7 +111,9 @@ const QuestionCard = ({
 
   return (
     <Card style={{ padding: 2, margin: 5, borderRadius: 10 }}>
-      <Text category="h5">{title}</Text>
+      <Text category="h5" style={{ color: "#7E55A0" }}>
+        {title}
+      </Text>
       <View style={{ padding: 2 }}>
         <View style={{ margin: 10 }}>{renderRadioButtons()}</View>
       </View>

@@ -41,7 +41,6 @@ const Quiz = ({ user, getQuiz, loading, quizAnswer, quizQuestions }) => {
       console.log("error", error);
     }
   };
-  console.log("user", user);
   return (
     <ScrollView
       refreshControl={
@@ -66,7 +65,14 @@ const Quiz = ({ user, getQuiz, loading, quizAnswer, quizQuestions }) => {
             })}
           </View>
           <View style={{}}>
-            <Button disabled={loading} onPress={handleQuizSubmit}>
+            <Button
+              style={{
+                backgroundColor: "#7E55A0",
+                borderColor: "#7E55A0",
+              }}
+              disabled={loading}
+              onPress={handleQuizSubmit}
+            >
               Submit
             </Button>
           </View>

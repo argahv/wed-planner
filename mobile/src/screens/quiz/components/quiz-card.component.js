@@ -22,7 +22,6 @@ const QuizCard = ({
   const handleRadioChange = async (index) => {
     setSelectedIndex(index);
     let selectedOption = options[index].value;
-    console.log("selectedOption", selectedOption);
     setDataValue({
       index: questionIndex,
       value: selectedOption,
@@ -31,7 +30,6 @@ const QuizCard = ({
   const findTheIndex = () => {
     return options.map(({ value }) => value).indexOf(data[questionIndex]);
   };
-  console.log("data", data);
 
   const renderRadioButtons = () => {
     return (
@@ -55,7 +53,15 @@ const QuizCard = ({
               key={`${label}-radio-button`}
             >
               {(evaProps) => (
-                <Text {...evaProps} style={{ fontSize: 16, marginLeft: 2 }}>
+                <Text
+                  {...evaProps}
+                  style={{
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    marginLeft: 2,
+                    color: "#7E55A0",
+                  }}
+                >
                   {label}
                 </Text>
               )}
@@ -68,7 +74,9 @@ const QuizCard = ({
 
   return (
     <Card style={{ padding: 2, margin: 5, borderRadius: 10 }}>
-      <Text category="h5">{title}</Text>
+      <Text category="h5" style={{ color: "#7E55A0" }}>
+        {title}
+      </Text>
       <View style={{ padding: 2 }}>
         <View style={{ margin: 10 }}>{renderRadioButtons()}</View>
       </View>

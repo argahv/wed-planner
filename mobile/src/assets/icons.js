@@ -4,27 +4,32 @@ import {
   AntDesign,
   MaterialIcons,
   MaterialCommunityIcons,
+  FontAwesome5,
 } from "@expo/vector-icons";
 
 export const BackIcon = (style) => <Icon {...style} name="arrow-back" />;
 
 export const RSVPIcon = (style) => (
-  <Icon {...style} name="checkmark-square-2-outline" />
+  <FontAwesome5 name="ring" size={24} color="#7E55A0" />
 );
 export const Circle = (style) => <Icon {...style} name="stop-circle-outline" />;
 
 export const QRIcon = (style) => (
-  <AntDesign name="qrcode" size={50} color="black" />
+  <AntDesign name="qrcode" size={50} color="#7E55A0" />
 );
 
 export const FoodIcon = (style) => (
-  <MaterialIcons name="food-bank" size={24} color="black" />
+  <MaterialIcons name="food-bank" size={24} color="#7E55A0" />
 );
 export const ScheduleIcon = (style) => (
-  <AntDesign name="calendar" size={24} color="black" />
+  <AntDesign name="calendar" size={24} color="#7E55A0" />
 );
 export const GameIcon = (style) => (
-  <MaterialCommunityIcons name="gamepad-circle-left" size={24} color="black" />
+  <MaterialCommunityIcons
+    name="gamepad-circle-left"
+    size={24}
+    color="#7E55A0"
+  />
 );
 
 export const BulbOutline = (style) => <Icon {...style} name="bulb-outline" />;

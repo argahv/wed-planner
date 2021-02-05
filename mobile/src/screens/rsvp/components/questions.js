@@ -67,19 +67,19 @@ export const questionCollection = [
     key: "drink_choice",
     options: [
       {
-        label: <Ionicons name="wine-outline" size={40} color="black" />,
+        label: <Ionicons name="wine-outline" size={40} color="#7E55A0" />,
         value: "wine",
       },
       {
-        label: <FontAwesome5 name="glass-whiskey" size={39} color="black" />,
+        label: <FontAwesome5 name="glass-whiskey" size={39} color="#7E55A0" />,
         value: "whisky",
       },
       {
-        label: <Ionicons name="ios-beer-outline" size={40} color="black" />,
+        label: <Ionicons name="ios-beer-outline" size={40} color="#7E55A0" />,
         value: "beer",
       },
       {
-        label: <MaterialIcons name="no-drinks" size={40} color="black" />,
+        label: <MaterialIcons name="no-drinks" size={40} color="#7E55A0" />,
         value: "no-drinking",
       },
     ],

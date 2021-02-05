@@ -22,7 +22,15 @@ const TopBar = ({ children, title = "", back = false }) => {
       <View style={{ display: "flex", flexDirection: "row", marginTop: 10 }}>
         {back && <View style={{ flex: 1 }}>{renderBackIcon()}</View>}
         <View style={{ flex: 8 }}>
-          <Text category="h5" style={{ textAlign: "center", fontSize: 30 }}>
+          <Text
+            category="h5"
+            style={{
+              textAlign: "center",
+              fontSize: 30,
+              fontWeight: "bold",
+              color: "#6B66A8",
+            }}
+          >
             {children}
           </Text>
         </View>
