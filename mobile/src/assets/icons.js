@@ -10,25 +10,25 @@ import {
 export const BackIcon = (style) => <Icon {...style} name="arrow-back" />;
 
 export const RSVPIcon = (style) => (
-  <FontAwesome5 name="ring" size={24} color="#7E55A0" />
+  <FontAwesome5 name="ring" size={24} color="#6B66A8" />
 );
 export const Circle = (style) => <Icon {...style} name="stop-circle-outline" />;
 
 export const QRIcon = (style) => (
-  <AntDesign name="qrcode" size={50} color="#7E55A0" />
+  <AntDesign name="qrcode" size={50} color="#6B66A8" />
 );
 
 export const FoodIcon = (style) => (
-  <MaterialIcons name="food-bank" size={24} color="#7E55A0" />
+  <MaterialIcons name="food-bank" size={24} color="#6B66A8" />
 );
 export const ScheduleIcon = (style) => (
-  <AntDesign name="calendar" size={24} color="#7E55A0" />
+  <AntDesign name="calendar" size={24} color="#6B66A8" />
 );
 export const GameIcon = (style) => (
   <MaterialCommunityIcons
     name="gamepad-circle-left"
     size={24}
-    color="#7E55A0"
+    color="#6B66A8"
   />
 );
 

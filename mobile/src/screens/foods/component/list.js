@@ -36,7 +36,9 @@ const RenderFoods = ({ data, getFoods, ...props }) => {
       <>
         <View style={{ display: "flex", flexDirection: "row", flex: 4 }}>
           <View style={{ flex: 2 }}>
-            <Text style={{ fontWeight: "bold", fontSize: 20 }}>
+            <Text
+              style={{ fontWeight: "bold", fontSize: 20, color: "#6B66A8" }}
+            >
               {item.title}
             </Text>
             <Text style={{ color: "grey" }}>{item.description}</Text>
@@ -45,15 +47,14 @@ const RenderFoods = ({ data, getFoods, ...props }) => {
         <View style={{ display: "flex", flexDirection: "row" }}>
           <Text
             style={{
-              padding: 2,
-              flex: 4,
+              margin: 1,
+              color: "#7E55A0",
               borderColor:
                 item.type === "Dinner".toLowerCase() ? "blue" : "purple",
-              borderWidth: 2,
-              margin: 2,
+              borderWidth: 1,
               fontSize: 20,
               textAlign: "center",
-              borderRadius: 7,
+              borderRadius: 2,
               fontWeight: "bold",
               maxWidth: 100,
             }}
@@ -62,17 +63,17 @@ const RenderFoods = ({ data, getFoods, ...props }) => {
           </Text>
           <Text
             style={{
-              padding: 2,
-              flex: 4,
+              margin: 1,
+              color: "#6B66A8",
               borderColor:
                 item.food_preference === "Veg".toLowerCase()
                   ? "green"
                   : "#bd3508",
-              borderWidth: 2,
+              borderWidth: 1,
               fontSize: 20,
               textAlign: "center",
               // color: "white",
-              borderRadius: 7,
+              borderRadius: 2,
               fontWeight: "bold",
               maxWidth: 100,
             }}

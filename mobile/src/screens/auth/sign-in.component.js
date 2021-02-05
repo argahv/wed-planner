@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, Text, ImageBackground } from "react-native";
 import { connect } from "react-redux";
 import { Button, Layout } from "@ui-kitten/components";
 import { Formik } from "formik";
@@ -8,6 +8,9 @@ import { FormInput } from "../../components/form-input.component";
 import { EyeIcon, EyeOffIcon } from "../../assets/icons";
 import { SignInData, SignInSchema } from "../../data/sign-in.model";
 import { loginUser } from "../../redux/global/actions";
+
+const SCREEN_WIDTH = Dimensions.get("screen").width;
+const SCREEN_HEIGHT = Dimensions.get("screen").height;
 
 const SignInScreen = (props) => {
   const [passwordVisible, setPasswordVisible] = React.useState(false);
@@ -49,9 +52,14 @@ const SignInScreen = (props) => {
   const renderForm = (formProps) => (
     <React.Fragment>
       <FormInput
+        textStyle={{
+          color: "#6B66A8",
+          fontSize: 23,
+          padding: 10,
+        }}
         id="phone_no"
         style={styles.formControl}
-        placeholder="Phone Number"
+        placeholder="Please Enter Your Phone Number"
         keyboardType="numeric"
         inputError={inputError}
       />
@@ -67,8 +75,12 @@ const SignInScreen = (props) => {
   );
 
   return (
-    <Layout>
-      <Text style={styles.formTitle}>Login</Text>
+    <Layout style={{ backgroundColor: "#C2C2DE", height: SCREEN_HEIGHT }}>
+      <ImageBackground
+        style={{ height: SCREEN_HEIGHT / 4, width: SCREEN_WIDTH }}
+        source={require("../../assets/login-logo.jpg")}
+      />
+      {/* <Text style={styles.formTitle}>Welcome to the wedding</Text> */}
       {/* <Layout style={styles.formContainer}> */}
       <Formik
         initialValues={SignInData.empty()}
@@ -97,11 +109,15 @@ const styles = StyleSheet.create({
   },
   formControl: {
     marginVertical: 4,
-    padding: 10,
+    marginTop: 30,
+    borderColor: "#6B66A8",
     fontSize: 40,
+    backgroundColor: "#e8e8e8",
   },
   submitButton: {
     marginVertical: 24,
+    backgroundColor: "#7E55A0",
+    borderColor: "#7E55A0",
   },
   noAccountButton: {
     alignSelf: "center",

@@ -23,27 +23,27 @@ const MainTabs = ({ navigation, state }) => {
     >
       <BottomNavigationTab
         icon={RSVPIcon}
-        title={<Title style={{ color: "#7E55A0" }}>Invitation</Title>}
+        title={<Title style={{ color: "#6B66A8" }}>Invitation</Title>}
       />
       <BottomNavigationTab
         icon={FoodIcon}
-        title={<Title style={{ color: "#7E55A0" }}>Foods</Title>}
+        title={<Title style={{ color: "#6B66A8" }}>Foods</Title>}
       />
       <BottomNavigationTab
         icon={QRIcon}
         title={
-          <Title style={{ fontSize: 20 }} style={{ color: "#7E55A0" }}>
+          <Title style={{ fontSize: 20 }} style={{ color: "#6B66A8" }}>
             Scan
           </Title>
         }
       />
       <BottomNavigationTab
         icon={ScheduleIcon}
-        title={<Title style={{ color: "#7E55A0" }}>Schedule</Title>}
+        title={<Title style={{ color: "#6B66A8" }}>Schedule</Title>}
       />
       <BottomNavigationTab
         icon={GameIcon}
-        title={<Title style={{ color: "#7E55A0" }}>Quiz</Title>}
+        title={<Title style={{ color: "#6B66A8" }}>Quiz</Title>}
       />
     </BottomNavigation>
   );

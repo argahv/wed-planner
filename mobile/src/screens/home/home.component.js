@@ -10,8 +10,6 @@ import TopBar from "../../components/topbar.component";
 const SCREEN_WIDTH = Dimensions.get("screen").width;
 const SCREEN_HEIGHT = Dimensions.get("screen").height;
 
-console.log("{SCREEN}", { SCREEN_WIDTH, SCREEN_HEIGHT });
-
 const HomeTabs = ({ user, ...props }) => {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const shouldLoadComponent = (index) => index === selectedIndex;
