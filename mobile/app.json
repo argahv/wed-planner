@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "wed-planner",
-    "slug": "wed-planner",
-    "version": "1.0.0",
+    "name": "Prasamsha Weds Aaditya",
+    "slug": "prasamsha-weds-aaditya",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -13,18 +13,17 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "weddding"
+      "bundleIdentifier": "prasamshawedsaaditya"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.vedanasoft.prasaadi"
     },
     "web": {
       "favicon": "./assets/favicon.png"

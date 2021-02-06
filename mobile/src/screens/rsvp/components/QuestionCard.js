@@ -10,7 +10,7 @@ import { selectData } from "../selectors";
 const QuestionCard = ({
   title = "",
   optionKey = "",
-  options = [{ label: "l" }],
+  options = [{ label: "l", value: "" }],
   optionType = { type: "", buttonType: "" },
   setDataValue,
   data,
@@ -27,7 +27,8 @@ const QuestionCard = ({
     });
   };
   const findTheIndex = () => {
-    return options.map(({ value }) => value).indexOf(data[optionKey]);
+    let index = options.map(({ value }) => value).indexOf(data[optionKey]);
+    return index;
   };
 
   const renderRadioButtons = () => {
@@ -39,14 +40,6 @@ const QuestionCard = ({
           onChange={handleRadioChange}
         >
           {options.map(({ label, value }, index) => {
-            // console.log("data", {
-            //   status: value === data[optionKey],
-            //   data,
-            //   value,
-            //   optionValue: data[optionKey],
-            //   index: findTheIndex(),
-            // });
-
             return (
               <Radio
                 checked={value === data[optionKey]}
@@ -95,7 +88,7 @@ const QuestionCard = ({
                 totalHeight={35}
                 iconSize={25}
                 valueType="real"
-                rounded
+                // rounded
                 onChange={(value) => setDataValue({ key: option.key, value })}
                 textColor="#B0228C"
                 iconStyle={{ color: "white" }}

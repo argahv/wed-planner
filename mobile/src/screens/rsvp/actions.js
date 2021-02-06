@@ -78,7 +78,6 @@ export const getRSVP = () => async (dispatch) => {
   try {
     const response = await rsvpGet();
     dispatch(getRSVPSuccess(response.data.data));
-
     return response.data;
   } catch (error) {
     let errorMessage = "";
